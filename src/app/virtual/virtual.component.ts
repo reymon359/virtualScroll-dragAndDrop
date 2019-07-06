@@ -22,6 +22,10 @@ export class VirtualComponent implements OnInit {
   goEnd() {
     this.viewPort.scrollToIndex(this.persons.length);
   }
+  
+  goMiddle() {
+    this.viewPort.scrollToIndex(this.persons.length/2);
+  }
   goStart() {
     this.viewPort.scrollToIndex(0);
   }
