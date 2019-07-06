@@ -2,7 +2,23 @@
     <h2>Virtual Scroll</h2>
 
 </div>
-
+<div class="row mb-5 ">
+    <div class="col ">
+        <form class="form-inline " (ngSubmit)="numberItems(itemsNumber.value)">
+            <div class="form-group">
+                <label for="scrollItems">Number of items</label>
+                <input type="number" id="scrollItems" placeholder="500" class="form-control mx-sm-3" #itemsNumber>
+                <button class="btn btn-success shadow-sm my-3" type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+        <p class="text-warning"> Max 500000 for performance</p>
+        <div *ngIf="persons.length === 0" class="alert alert-danger" role="alert">
+            Please introduce a number between 1 and 500000
+        </div>
+    </div>
+</div>
 <div class="row mb-4">
     <div class="col">
         <button class="btn btn-primary shadow-sm" (click)="goStart()">
@@ -26,6 +42,7 @@
 <cdk-virtual-scroll-viewport itemSize="50" style="height:50vh;" class="shadow list-group ">
 
     <div class="list-group-item" *cdkVirtualFor="let person of persons; let i = index; let counter = count;">
+
         Item {{i+1}} /{{counter}}
     </div>
 

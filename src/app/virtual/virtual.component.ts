@@ -16,15 +16,23 @@ export class VirtualComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.persons);
+    console.log('items', this.persons);
+  }
+
+  numberItems(itemsNumber: number) {
+    itemsNumber = (Number(itemsNumber) > 500000) ? 500000 : Number(itemsNumber);
+    this.persons = Array(itemsNumber).fill(0);
+    console.log('items', this.persons);
+
+
   }
 
   goEnd() {
     this.viewPort.scrollToIndex(this.persons.length);
   }
-  
+
   goMiddle() {
-    this.viewPort.scrollToIndex(this.persons.length/2);
+    this.viewPort.scrollToIndex(this.persons.length / 2);
   }
   goStart() {
     this.viewPort.scrollToIndex(0);
