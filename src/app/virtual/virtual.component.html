@@ -4,7 +4,7 @@
 </div>
 
 <!-- We need to put the height of each item -->
-<cdk-virtual-scroll-viewport itemSize="50" class="list-container list-group">
+<cdk-virtual-scroll-viewport itemSize="50" style="height:50vh;" class="shadow list-group ">
 
     <div class="list-group-item" *cdkVirtualFor="let person of persons; let i = index; let counter = count;">
         Item {{i+1}} /{{counter}}
