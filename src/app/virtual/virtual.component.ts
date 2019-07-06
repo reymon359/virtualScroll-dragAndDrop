@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 
 
 @Component({
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class VirtualComponent implements OnInit {
-  
+
+  @ViewChild(CdkVirtualScrollViewport) viewPort: CdkVirtualScrollViewport;
+
+
   persons = Array(500).fill(0);
 
   constructor() { }
@@ -15,5 +19,9 @@ export class VirtualComponent implements OnInit {
   ngOnInit() {
     console.log(this.persons);
   }
-  
+
+  goEnd() {
+    this.viewPort.scrollToIndex(this.persons.length);
+  }
+
 }
