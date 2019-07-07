@@ -3,10 +3,20 @@
 </div>
 <div class="row">
     <div class="col">
-        <ul class="  list-group" cdkDropList (cdkDropListDropped)=drop($event)>
-            <li class="list-group-item" *ngFor="let country of countries" cdkDrag>
-                {{country.name}}
+        <ul class=" list-group" cdkDropList (cdkDropListDropped)=drop($event)>
+            <li class="list-group-item p-0" *ngFor="let country of countries" cdkDrag>
+                <div class="custom-placeholder" *cdkDragPlaceholder></div>
+
+                <h5 class="card-title  p-2">{{country.name}} - <small>{{country.capital}}</small><img class="ml-3 shadow-sm" height="40px" [src]="country.flag" [alt]="country.name"></h5>
             </li>
         </ul>
     </div>
 </div>
+<!-- <div class="row justify-content-center align-content-center align-items-baseline" cdkDropList (cdkDropListDropped)=drop($event)>
+    <div class="col-md-2" *ngFor="let country of countries" cdkDrag>
+        <div class="card">
+            <img height="100px" class="card-img-top " [src]="country.flag" [alt]="country.name">
+            <h5 class="card-title text-center p-2">{{country.name}} <br> <small>{{country.capital}}</small></h5>
+        </div>
+    </div>
+</div> -->
