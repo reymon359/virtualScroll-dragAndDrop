@@ -16,7 +16,6 @@ export class CountriesComponent implements OnInit {
   ngOnInit() {
     this.http.get(`https://restcountries.eu/rest/v2/region/europe`)
       .subscribe(countries => this.countries = countries);
- 
   }
 
   drop(event: CdkDragDrop<any>) {
