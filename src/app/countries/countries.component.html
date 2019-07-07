@@ -1,6 +1,35 @@
 <div class="row p-4">
     <h2>Drag & Drop <small>With Countries</small></h2>
 </div>
+<div class="row mb-4 align-content-center align-items-center">
+    <!-- Africa, Americas, Asia, Europe, Oceania -->
+    <div class="col text-center">
+        <button class="btn btn-primary shadow-sm  mt-1" (click)="getCountries('oceania')">
+                    Oceania
+                </button>
+    </div>
+    <div class="col text-center">
+        <button class="btn btn-secondary shadow-sm mt-1" (click)="getCountries('europe')">
+                    Europe
+                </button>
+    </div>
+    <div class="col text-center">
+        <button class="btn btn-warning shadow-sm mt-1" (click)="getCountries('asia')">
+                    Asia
+                </button>
+    </div>
+    <div class="col text-center">
+        <button class="btn btn-success shadow-sm mt-1" (click)="getCountries('americas')">
+                    Americas
+                </button>
+    </div>
+    <div class="col text-center">
+        <button class="btn btn-info shadow-sm mt-1" (click)="getCountries('africa')">
+                Africa
+            </button>
+    </div>
+
+</div>
 <div class="row">
     <div class="col">
         <ul class="shadow list-group" cdkDropList (cdkDropListDropped)=drop($event)>
