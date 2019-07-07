@@ -1,5 +1,5 @@
 <div class="row p-4">
-    <h2>Drag & Drop <small>European Countries</small></h2>
+    <h2>Drag & Drop <small>With Countries</small></h2>
 </div>
 <div class="row">
     <div class="col">
@@ -7,7 +7,7 @@
             <li class="list-group-item p-0" *ngFor="let country of countries" cdkDrag>
                 <div class="custom-placeholder" *cdkDragPlaceholder></div>
 
-                <h5 class="card-title  p-2">{{country.name}} - <small>{{country.capital}}</small><img class="ml-3 shadow-sm" height="40px" [src]="country.flag" [alt]="country.name"></h5>
+                <h5 class="card-title m-0 p-1">{{country.name}} - <small>{{country.capital}}</small><img class="ml-3 shadow-sm" height="40px" [src]="country.flag" [alt]="country.name"></h5>
             </li>
         </ul>
     </div>
