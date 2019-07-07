@@ -13,12 +13,15 @@ export class CountriesComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
-    this.http.get(`https://restcountries.eu/rest/v2/region/europe`)
-      .subscribe(countries => this.countries = this.getRandom(countries, 10));
+  ngOnInit(){ 
+this.getCountries();
   }
-  getCountries(continent:string){
-
+  getCountries(continent = 'europe') {
+    this.http.get(`https://restcountries.eu/rest/v2/region/${continent}`)
+      .subscribe(countries => this.countries = this.getRandom(countries, 10));
+      // setTimeout(() => {
+      //   console.log(this.countries);
+      // }, 1000);
   }
   drop(event: CdkDragDrop<any>) {
     moveItemInArray(this.countries, event.previousIndex, event.currentIndex);
@@ -29,7 +32,7 @@ export class CountriesComponent implements OnInit {
     const result = new Array(n);
     let len = arr.length;
     const taken = new Array(len);
-    if (n > len){
+    if (n > len) {
       throw new RangeError('getRandom: more elements taken than available');
     }
     while (n--) {
