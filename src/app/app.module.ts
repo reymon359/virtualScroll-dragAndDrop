@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
 
 import {  ScrollingModule} from '@angular/cdk/scrolling';
 import {  DragDropModule} from '@angular/cdk/drag-drop';
@@ -9,19 +11,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VirtualComponent } from './virtual/virtual.component';
 import { DragComponent } from './drag/drag.component';
+import { CountriesComponent } from './countries/countries.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VirtualComponent,
-    DragComponent
+    DragComponent,
+    CountriesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ScrollingModule,
     FormsModule,
-    DragDropModule
+    DragDropModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
