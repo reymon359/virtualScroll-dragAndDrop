@@ -23,8 +23,6 @@ export class VirtualComponent implements OnInit {
     itemsNumber = (Number(itemsNumber) > 500000) ? 500000 : Number(itemsNumber);
     this.persons = Array(itemsNumber).fill(0);
     console.log('items', this.persons);
-
-
   }
 
   goEnd() {
